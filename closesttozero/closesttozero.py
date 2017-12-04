@@ -5,7 +5,7 @@ import sys
 
 __version__ = "0.0.1"
 
-logging.basicConfig(level=logging.DEBUG)
+logging.basicConfig(level=logging.INFO)
 
 class ClosestPairToZero(object):
     """
@@ -22,8 +22,9 @@ class ClosestPairToZero(object):
         # in turn and keep track of the smallest value
         num_count = len(self.numbers)
         if num_count < 2:
-            print "We need at least 2 numbers!"
-            return
+#            print "We need at least 2 numbers!"
+#            return
+            raise ValueError("We need at least 2 numbers!")
 
         smallest_sum = sys.maxint
         first_pos = 0

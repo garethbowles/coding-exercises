@@ -18,9 +18,9 @@ class TestClosestPairToZero(unittest.TestCase):
 
     def test_only_one_number(self):
         numbers = [10]
-        result = ClosestPairToZero(numbers).find_smallest_pair_sum()
-        print 'Should get null result for single element array'
-        self.assertEqual(result, None)
+        with self.assertRaises(Exception) as context:
+            result = ClosestPairToZero(numbers).find_smallest_pair_sum()
+        self.assertTrue('We need at least 2 numbers!' in context.exception)
 
 if __name__ == '__main__':
     unittest.main()
